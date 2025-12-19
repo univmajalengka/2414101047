@@ -1,0 +1,985 @@
+/* ================================
+   STYLE.CSS - Karya Wisata Bali
+   ================================ */
+
+/* Reset dan Gaya Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== 1. HEADER ===== */
+.header {
+    background: linear-gradient(135deg, #38761d 0%, #2d5a15 100%);
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 50;
+}
+
+.header h1 {
+    font-size: 2.8em;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+    font-size: 1.1em;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+/* ===== 2. BANNER ===== */
+.banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0;
+    height: auto;
+    margin-bottom: 40px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.banner-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.banner-image:hover {
+    transform: scale(1.05);
+}
+
+/* ===== 3. NAVIGATION MENU ===== */
+.nav-wrapper {
+    background-color: #ffcc00;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 0;
+}
+
+.nav-menu ul li {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+}
+
+.nav-menu ul li a {
+    display: block;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #e6b800;
+    color: #000;
+    border-bottom-color: #38761d;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-booking-now, .btn-pesanan-saya {
+    padding: 10px 20px;
+    background-color: #38761d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-booking-now:hover, .btn-pesanan-saya:hover {
+    background-color: #2d5a15;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== 4. SECTIONS ===== */
+.section {
+    display: none;
+    min-height: 100vh;
+    padding: 80px 0;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.section h2 {
+    font-size: 2.5em;
+    color: #38761d;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Section ID untuk targeting */
+#section-beranda,
+#section-about,
+#section-wisata,
+#section-fasilitas,
+#section-paket,
+#section-galeri,
+#section-pemesanan {
+    scroll-margin-top: 80px;
+}
+
+/* ===== 5. BERANDA SECTION ===== */
+#section-beranda {
+    background: linear-gradient(135deg, rgba(56, 118, 29, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%);
+}
+
+.beranda-content {
+    text-align: center;
+}
+
+.beranda-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.beranda-content p {
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.beranda-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card h3 {
+    color: #38761d;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ===== 6. ABOUT SECTION ===== */
+#section-about {
+    background-color: #fafafa;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text h3 {
+    color: #38761d;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== 7. WISATA OBJECTS ===== */
+.wisata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.wisata-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wisata-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.wisata-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.wisata-card-content {
+    padding: 20px;
+}
+
+.wisata-card-content h3 {
+    color: #38761d;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.wisata-card-content p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+/* ===== 8. FASILITAS SECTION ===== */
+#section-fasilitas {
+    background-color: #fafafa;
+}
+
+.fasilitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.fasilitas-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #38761d;
+    transition: transform 0.3s ease;
+}
+
+.fasilitas-item:hover {
+    transform: translateX(5px);
+}
+
+.fasilitas-item h3 {
+    color: #38761d;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.fasilitas-item p {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* ===== 9. PAKET SECTION ===== */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+}
+
+.packages-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    transition: box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.package-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.package-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.package-info h3 {
+    color: #38761d;
+    margin-bottom: 12px;
+    font-size: 1.3em;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.package-info p {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.price {
+    font-weight: 700;
+    color: #dc3545;
+    font-size: 1.3em;
+    margin-top: auto;
+}
+
+/* ===== 10. SIDEBAR ===== */
+.sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.video-widget, .search-widget {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.video-widget h3, .search-widget h3 {
+    color: #38761d;
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.youtube-frame {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 8px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 8px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #38761d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #2d5a15;
+}
+
+/* ===== 11. GALERI SECTION ===== */
+.galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeri-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.galeri-item:hover {
+    transform: scale(1.05);
+}
+
+.galeri-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== 12. PEMESANAN SECTION ===== */
+#section-pemesanan {
+    background: linear-gradient(135deg, rgba(56, 118, 29, 0.05) 0%, rgba(255, 204, 0, 0.05) 100%);
+}
+
+.pemesanan-content {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pemesanan-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pemesanan-info {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    border-left: 4px solid #38761d;
+}
+
+.pemesanan-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.btn-booking {
+    width: 100%;
+    padding: 15px;
+    background-color: #38761d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-booking:hover {
+    background-color: #2d5a15;
+}
+
+/* ===== 13. FORM STYLES ===== */
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #38761d;
+    box-shadow: 0 0 0 3px rgba(56, 118, 29, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+.btn-submit, .btn-cancel {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit {
+    background-color: #38761d;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #2d5a15;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+    color: #333;
+    margin-left: 10px;
+}
+
+.btn-cancel:hover {
+    background-color: #999;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* ===== 14. TABLE STYLES ===== */
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #38761d;
+    color: white;
+}
+
+thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-edit, .btn-delete, .btn-view {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.btn-view {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-view:hover {
+    background-color: #218838;
+}
+
+/* ===== 15. ALERT & MESSAGE ===== */
+.alert {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #28a745;
+}
+
+.alert-error, .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #dc3545;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-color: #17a2b8;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffc107;
+}
+
+/* ===== 16. MODAL STYLES ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* ===== 17. LOADING SPINNER ===== */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #38761d;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== 18. RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+    .nav-menu ul {
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        flex: 0 1 auto;
+        min-width: auto;
+    }
+
+    .nav-menu ul li a {
+        padding: 12px 8px;
+        font-size: 0.9em;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        top: auto;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .package-card {
+        grid-template-columns: 1fr;
+    }
+
+    .package-card img {
+        height: 250px;
+    }
+
+    .beranda-features {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .btn-booking-now, .btn-pesanan-saya {
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner-image {
+        height: 120px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    .btn-edit, .btn-delete, .btn-view {
+        padding: 4px 8px;
+        font-size: 0.75em;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .section {
+        padding: 50px 0;
+        min-height: auto;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .pemesanan-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-menu ul {
+        justify-content: space-around;
+    }
+
+    .nav-menu ul li a {
+        padding: 10px 5px;
+        font-size: 0.8em;
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-image {
+        height: 150px;
+    }
+
+    .wisata-grid, .fasilitas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 1.2em;
+    }
+
+    .header p {
+        font-size: 0.9em;
+    }
+
+    .section h2 {
+        font-size: 1.3em;
+    }
+
+    .feature-card {
+        padding: 15px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .table-container {
+        font-size: 0.85em;
+    }
+
+    thead th {
+        padding: 10px;
+    }
+
+    tbody td {
+        padding: 8px;
+    }
+}
